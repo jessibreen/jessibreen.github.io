@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Census and You: Making Choropleths from Census Data</title>
+
+		<meta name="author" content="Jessica Breen">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>The U.S. Census and You!</h2>
+					<h3>Making Choropleths from Census Data</h3>
+				</section>
+
+				<section>
+					<h3>What is the U.S. Census?</h3>
+					<p>
+						It is a <a href="http://press-pubs.uchicago.edu/founders/tocs/a1_2_3.html">constitutionally mandated</a>, <a href="http://www.oxforddictionaries.com/us/definition/american_english/decennial">decennial</a>, population census for the purposes of apportioning seats in the House of Representatives.
+					</p>
+				</section>
+
+				<section>
+					<p>
+						Everyone living in the U.S. in a "residental structure" is counted, regardless of citizenship. 
+					</p>
+					<br>
+					<p>
+						<i>(Americans living abroad aren't counted...unless they work for the Federal Government.)</i>
+					</p>
+				</section>
+
+				<section>
+  					<iframe class="stretch" data-src="http://demographics.coopercenter.org/DotMap/"></iframe>
+  					<p>
+  						Here's what a dotmap of that looks like...
+  					</p>
+				</section>
+
+				<section>
+					<h3>What questions are on the Census?</h3>
+					<p>
+						This 2010 Census was one of the shortest in the history of the U.S. Census. It consisted of only <a href="http://www.census.gov/2010census/about/interactive-form.php">10 questions</a>. 
+					</p>
+					<br>
+					<p>
+						In 1940, there were <a href="http://1940census.archives.gov/questions-asked/">50 questions</a>.
+					</p>
+				</section>
+
+				<!-- <section>
+				
+				</section> -->
+
+				<section>
+					<h2>Important Information about Census Data</h2>
+				</section>
+
+				<section>
+					<h3>Census data is only available as aggregate data.</h3>
+					<p>
+						<i>(Unless it's over 72 years old or you have access to a Federal Research Data Center)</i>
+					</p>
+				</section>
+
+				<section>
+					<h3>Census data is broken down into a series of increasingly smaller units</h3>
+					<ul>
+						<li>state</li>
+						<li>county</li>
+						<li>tract</li>
+						<li>block group</li>
+						<li>block</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Every census unit has a numeric geographic identifier (GEOID)</h3>
+					<img src="lib/images/geoid.jpg">
+					
+				</section>
+
+				<section>
+					<h3>Not all Census tracts are equal</h3>
+					<ul>
+						<li>Tracts are drawn by population, not geographic area.</li>
+						<li>Population density can result in a wide range of tract sizes.</li>
+						<li>The goal is to have between 1,200 and 8,000 residents in a tract, with 4,000 being the ideal.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Census units are redrawn for every Decennial Census</h3>
+					<ul>
+						<li>People move, so tract boundaries are changed to maintain population size.</li>
+						<li>Really important when trying to compare Census findings from one year to another.</li>
+					</ul>
+				</section>
+
+
+
+				</section>
+
+				<section>
+					<h3>Where do you get U.S. Census data?</h3>
+					<ul>
+						<li> <a href="http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml">American Fact Finder</a> </li>
+						<li> <a href="https://www.census.gov/geo/maps-data/data/tiger.html">TIGER</a></li>
+					</ul>	
+				</section>
+
+				<section>
+					<section>
+						<h3>American Fact Finder</h3>
+						<p>
+							This site provides access to all the tabular data available from the U.S. Census Bureau, which includes <a href="http://factfinder.census.gov/faces/nav/jsf/pages/what_we_provide.xhtml">a lot more </a> than just the Decennial Census. This is also where you'll find the <a href"http://factfinder.census.gov/faces/nav/jsf/pages/programs.xhtml?program=acs">American Community Survey</a>, the <a href="http://factfinder.census.gov/faces/nav/jsf/pages/programs.xhtml?program=ahs">American Housing Survey</a>, and the <a href="http://factfinder.census.gov/faces/nav/jsf/pages/programs.xhtml?program=econ">Economic Census</a>.
+						</p>
+					</section>
+					<section>
+						<h3>Finding the data you want</h3>
+						<ul>
+							<li>Use the <a href="http://factfinder.census.gov/faces/nav/jsf/pages/download_center.xhtml">Download Center</a> if you know what tables you need or you want prepackaged data</li>
+							<li>Use <a href="http://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml?refresh=t">Advanced Search</a> if you need to explore the data more</li>
+							<li>Use the <a href="http://factfinder.census.gov/help/en/index.htm#">Help</a> option if you want to become a data ninja</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>TIGER</h3>
+						<p style="font-size:90%;">
+							<u>T</u>opologically <u>I</u>ntegrated <u>G</u>eographic <u>E</u>ncoding and <u>R</u>eferencing
+						</p>
+						<br>
+						<p>
+							This is the clearinghouse for all of the U.S. Census Bureau's mapping products. Mapping products are available as shapefiles, geodatabases, and kmls.
+						</p>
+					</section>
+					<section>
+						<h3>Downloading county data from TIGER</h3>
+						<ul>
+							<li>Go to the <a href="https://www.census.gov/cgi-bin/geo/shapefiles/index.php">TIGER web interface</a></li>
+							<li> Choose the year you want data for and then select "Counties (and Equivalent)" as the datatype</li>
+							<li> On the next page, select the state or opt to download all the states in one file</li>
+							<li> Click the download button and select where you want to save the file</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Want data for a specific place but don't know it's GEOID?</h3>
+						<p>
+							Try <a href="http://tigerweb.geo.census.gov/TIGERweb2010/">TIGERweb</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Getting Started with QGIS</h2>
+				</section>
+
+				<section>
+					<h3>Adding TIGER data to QGIS</h3>
+					<ul>
+						<li> Click Add Vector Layer <img style="margin: 0;" src="http://docs.qgis.org/2.2/en/_images/mActionAddOgrLayer.png"></li>
+						<li>Use the Browse button to find your saved shapefile</li>
+						<li>Click on the Open button</li> 
+					</ul>
+				</section>
+
+				<section>
+					<h3>Adding Fact Finder data to QGIS</h3>
+					<ul>
+						<li>Click Add Delimited Text Layer <img style="margin: 0;" src="http://docs.qgis.org/2.2/en/_images/mActionAddDelimitedTextLayer.png"></li>
+						<li>Use the Browse button to find your saved csv file</li>
+						<li>Make sure the radio buttons for "CSV" and "No geometry" are selected</li>
+						<li>Click OK</li>
+					</ul>
+				</section>
+					
+				<section>
+					<h3>Finding your keys</h3>
+					<p> 
+						In a GIS, primary and foreign keys are used to join layers together. A primary key is a unique identifier for each record that has no duplicate values and is not null. A foreign key, matches the primary key, but is located in a different table. In Census data, we use the GEOID for both keys. 
+					<br>
+						You'll need to know which column in each of your data layers contains the GEOID. You can do this by right-clicking on a data layer and selecting Open Attribute Table. You'll then be able to scroll through the data and find the column is the one you want. 
+					</p>
+				</section>
+				<section>
+					<section>
+						<h3>Performing a table join</h3>
+						<ul>
+							<li>Right-click on the vector layer</li>
+							<li>Select Properties and then the Joins tab</li>
+							<li>Click on the green plus symbol</li>
+							<li>In the pop-up menu, the Join Layer is the table layer you want to join, the Join Field is the foreign key, and the Target Field is the primary key</li>
+							<li>Click Okay</li>
+							<li>Open the attribute table and check that the join worked</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Troubleshooting</h3>
+						<ul>
+							<li>If your table join isn't working, first make sure that you're selecting the correct fields for your primary and foreign keys.</li>
+							<li>If the columns are correct and it's still not working, check the Fields tab under the layer Properties to make sure the data types of the two columns are the same.</li>
+							<li>If the column data types are different, you'll need a <a href="http://www.qgistutorials.com/en/docs/performing_table_joins.html">sidecar file</a> to correct the problem.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h3>Normalizing the Data</h3>
+					<ul>
+						<li>Select the layer you want to normalize</li>
+						<li>Open the Field Calculator <img style="margin: 0;" src="http://docs.qgis.org/2.2/en/_images/mActionCalculateField.png"></li>
+						<li>Create a new field and name it</li> 
+						<li>Set the new field's field type, as well as the precision and width</li>
+						<li>In the expression editor, write an expression that divides the data your want to normalize by a field containing population data</li>
+						<li>Click Ok</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h3>Categorizing the Data</h3>
+						<ul>
+							<li>Open the layer properties and select the Style tab</li>
+							<li>Select Graduated from the upper left dropdown menu</li>
+							<li>Use the Column dropdown menu to select your normalized field</li>
+							<li>Select the Mode of classification you're going to use</li>
+							<li>Click the Classify button in the middle of the screen to add your classes</li>
+							<li>Click Ok</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Choosing a Classification Scheme</h3>
+						<p>
+							The classification scheme you choose makes a big difference to how your map represents the data. 
+						</p>
+						<br>
+						<p>
+							John Krygier breaks this down on his <a href="http://go.owu.edu/~jbkrygie/krygier_html/geog_353/geog_353_lo/geog_353_lo07.html">website</a>.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Selecting a Color Scheme</h3>
+						<p>
+							Once again, John Krygier has this <a href="http://go.owu.edu/~jbkrygie/krygier_html/geog_353/geog_353_lo/geog_353_lo09.html">covered</a>.
+
+					</section>
+				
+					<section>
+						<h3>Using Colorbrewer in QGIS</h3>
+						<ul>
+							<li>From the Settings menu, select Style Manager</li>
+							<li>Choose the Color Ramp option and click Add</li>
+							<li>In the dropdown menu, select ColorBrewer</li>
+							<li>From here you can select any of the color schemes available on <a href="http://colorbrewer2.org/">ColorBrewer</a></li>
+							<li>Click Ok to choose your color scheme and then give it a name</li>
+							<li>The next time you go to set a layer Style, you shoudl see the new color ramp as an option</li>
+						</ul>
+						<p style="font-size:80%;">
+							*You can also make these changes in the Layer Properties Style tab*
+						</p>
+					</section>
+				</section>
+				<section>
+					<h2>QGIS Help</h2>
+				</section>
+				<section>
+					<h3><a href="http://anitagraser.com/">Anita Graser</a></h3>
+					<ul>
+						<li>Lots of tips and tricks</li>
+						<li>She even wrote the <a href="http://www.amazon.com/Learning-QGIS-2-0-Anita-Graser/dp/178216748X">book</a> on learning QGIS</li>
+					</ul>
+				</section>
+				<section>
+					<h3><a href="http://www.qgistutorials.com/en/">QIS Tutorials</a></h3>
+					<ul>
+						<li>Step by step tutorials on QGIS basics</li>
+						<li>Sometimes misses a step or two, but usually pretty clear</li>
+					</ul>
+				</section>
+				<section>
+					<h3><a href="http://www.qgis.org/en/docs/index.html#">QGIS Documentation</a></h3>
+					<ul>
+						<li>For the Community, by the Community!</li>
+						<li>Covers multiple versions of the software, be careful which one you're using</li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				viewDistance: 3,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
