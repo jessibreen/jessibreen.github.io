@@ -1,0 +1,16 @@
+Crowdsourced QGIS Resources
+
+Anita Graser's website - https://anitagraser.com/
+Learning QGIS - https://www.packtpub.com/big-data-and-business-intelligence/learning-qgis-third-edition
+QGIS Map Design - https://locatepress.com/qmd
+"How to Ask Questions the Smart Way" - http://www.catb.org/esr/faqs/smart-questions.html
+Books lists on the QGIS Project site - http://qgis.org/pl/site/forusers/books/index.html
+QGIS Tutorials - http://www.qgistutorials.com/en/
+Geo For All - http://www.geoforall.org/
+GW University (teaches open source GIS) - https://geography.columbian.gwu.edu/minor-gis
+University Consortium for Geographic Information Science - http://ucgis.org/
+Mastering QGIS - https://www.packtpub.com/application-development/mastering-qgis
+Online QGIS Courses - https://fossgeo.org/free-qgis-courses/
+Discover QGIS Workbook - https://locatepress.com/dqw
+NCSU OSGeoREL Courses - https://geospatial.ncsu.edu/osgeorel/courses.html
+GRASS GIS Terrain Analysis Tutorial - https://grasswiki.osgeo.org/wiki/Introduction_to_GRASS_GIS_with_terrain_analysis_examples
